@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aniket Gavate</title>
+  <meta name="description" content="Portfolio of Aniket Gavate — Projects, work, tools, and links.">
+  
+  <!-- Minimalist Straight Fonts: Geist & Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <main class="page-container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Aniket Gavate</h1>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Projects</h2>
+        
+        <!-- Minimal text-only filter tabs (no boxes) -->
+        <nav class="filter-nav" aria-label="Project filter">
+          <button class="filter-link active" data-category="all" onclick="setFilter('all', this)">All</button>
+          <span class="filter-sep">/</span>
+          <button class="filter-link" data-category="ai" onclick="setFilter('ai', this)">AI</button>
+          <span class="filter-sep">/</span>
+          <button class="filter-link" data-category="fullstack" onclick="setFilter('fullstack', this)">Fullstack</button>
+          <span class="filter-sep">/</span>
+          <button class="filter-link" data-category="frontend" onclick="setFilter('frontend', this)">Frontend</button>
+          <span class="filter-sep">/</span>
+          <button class="filter-link" data-category="backend" onclick="setFilter('backend', this)">Backend</button>
+        </nav>
+      </div>
+
+      <div class="projects-feed" id="projectsList">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- Side Quests Section (Compact fun tools & experiments) -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Side Quests</h2>
+      </div>
+      <div class="projects-feed" id="sideQuestsList">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- Experience Section (Unboxed, editorial timeline) -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="experience-list">
+        <div class="experience-entry">
+          <div class="exp-line-top">
+            <div class="exp-role-title">
+              <span class="exp-role">Freelance Web Designer</span>
+              <span class="exp-sep">·</span>
+              <span class="exp-company">Kala Studios</span>
+            </div>
+            <span class="exp-time">Feb 2026 — Present</span>
+          </div>
+          <p class="exp-desc">
+            Designed and built responsive client web applications, interactive UI components, and animations with React, Three.js, and GSAP.
+          </p>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-line-top">
+            <div class="exp-role-title">
+              <span class="exp-role">Frontend Developer Intern</span>
+              <span class="exp-sep">·</span>
+              <span class="exp-company">Global Web Dreams</span>
+            </div>
+            <span class="exp-time">Jan 2025 — Mar 2025</span>
+          </div>
+          <p class="exp-desc">
+            Delivered client landing pages with 90+ Lighthouse performance scores, optimizing assets and collaborating in agile sprint timelines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools & Technologies (Unboxed, pure editorial alignment) -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Tools &amp; Technologies</h2>
+      </div>
+      <div class="stack-table">
+        <div class="stack-entry">
+          <span class="stack-heading">Languages</span>
+          <span class="stack-body">TypeScript, JavaScript, Python, HTML5, CSS3, SQL, C++</span>
+        </div>
+        <div class="stack-entry">
+          <span class="stack-heading">Frontend</span>
+          <span class="stack-body">React, Next.js, Tailwind CSS, Electron.js, Vue, Radix UI, GSAP</span>
+        </div>
+        <div class="stack-entry">
+          <span class="stack-heading">Backend &amp; DB</span>
+          <span class="stack-body">Node.js, Express, PostgreSQL, MongoDB, Supabase, Convex, Prisma, Socket.io, Redis</span>
+        </div>
+        <div class="stack-entry">
+          <span class="stack-heading">AI &amp; Workflows</span>
+          <span class="stack-body">LangGraph, LangChain, RAG, ChromaDB, OpenAI API</span>
+        </div>
+        <div class="stack-entry">
+          <span class="stack-heading">Dev &amp; Cloud</span>
+          <span class="stack-body">Git, GitHub, Docker, Vercel, Render, Vite, Postman, Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect (Unboxed, clean typographic rows) -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Connect</h2>
+      </div>
+      <div class="connect-list">
+        <a href="aniket--resume.pdf" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">Resume</span>
+          <span class="connect-link">Download PDF <span class="arrow">↗</span></span>
+        </a>
+        <a href="https://github.com/aniket0929" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">GitHub</span>
+          <span class="connect-link">@aniket0929 <span class="arrow">↗</span></span>
+        </a>
+        <a href="https://www.linkedin.com/in/aniket-gavate-091209233/" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">LinkedIn</span>
+          <span class="connect-link">aniket-gavate <span class="arrow">↗</span></span>
+        </a>
+        <a href="https://x.com/aniwowz" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">X / Twitter</span>
+          <span class="connect-link">@aniwowz <span class="arrow">↗</span></span>
+        </a>
+        <a href="mailto:aniketgavwork@gmail.com" class="connect-entry">
+          <span class="connect-label">Email</span>
+          <span class="connect-link">aniketgavwork@gmail.com <span class="arrow">↗</span></span>
+        </a>
+        <a href="https://leetcode.com/u/aniket029/" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">LeetCode</span>
+          <span class="connect-link">@aniket029 <span class="arrow">↗</span></span>
+        </a>
+        <a href="https://medium.com/@aniketgavate12345" target="_blank" rel="noopener noreferrer" class="connect-entry">
+          <span class="connect-label">Medium</span>
+          <span class="connect-link">@aniketgavate12345 <span class="arrow">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>© 2026 Aniket Gavate</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+/* --------------------------------------------------
+   Aniket Gavate — Unboxed Minimalist Portfolio (pf3)
+   Aesthetic: No Cards, No Blocks, Pure Editorial Type, Subtle Grain
+-------------------------------------------------- */
+
+:root {
+  --bg: #09090b;
+  
+  --line: rgba(255, 255, 255, 0.06);
+  --line-subtle: rgba(255, 255, 255, 0.035);
+  
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 5.5rem 1.5rem 6.5rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ---------------- Grain Overlay ---------------- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ---------------- Layout Container ---------------- */
+.page-container {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* ---------------- Header ---------------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.name {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.intro {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* ---------------- Section Common ---------------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ---------------- Filter Navigation (Unboxed) ---------------- */
+.filter-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.filter-link {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.filter-link:hover {
+  color: var(--text-secondary);
+}
+
+.filter-link.active {
+  color: var(--text-primary);
+}
+
+.filter-sep {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--line);
+  user-select: none;
+}
+
+/* ---------------- Projects Feed (Unboxed) ---------------- */
+.projects-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line-subtle);
+  transition: opacity 0.15s ease;
+}
+
+.project-entry:first-child {
+  padding-top: 0.25rem;
+}
+
+.project-entry:last-child {
+  border-bottom: none;
+}
+
+.project-line-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-identity {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.project-name {
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.link-action {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.15s ease;
+}
+
+.link-action:hover {
+  color: var(--text-primary);
+}
+
+.link-action .arrow {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.link-action:hover .arrow {
+  transform: translate(1px, -1px);
+}
+
+.project-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.project-description a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+
+.project-description a:hover {
+  text-decoration-color: var(--text-primary);
+}
+
+.project-stack {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ---------------- Experience (Unboxed Timeline) ---------------- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.experience-entry:first-child {
+  padding-top: 0.25rem;
+}
+
+.experience-entry:last-child {
+  border-bottom: none;
+}
+
+.exp-line-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-role-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.exp-sep {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.exp-company {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.exp-time {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.exp-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ---------------- Tools & Technologies (Unboxed Table) ---------------- */
+.stack-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stack-entry {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.25rem 0;
+}
+
+.stack-heading {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stack-body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ---------------- Connect (Unboxed Typographic Rows) ---------------- */
+.connect-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-subtle);
+  transition: color 0.15s ease;
+}
+
+.connect-entry:first-child {
+  padding-top: 0;
+}
+
+.connect-entry:last-child {
+  border-bottom: none;
+}
+
+.connect-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+}
+
+.connect-link {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.connect-entry:hover .connect-label {
+  color: var(--text-primary);
+}
+
+.connect-entry:hover .connect-link {
+  color: var(--text-secondary);
+}
+
+.connect-entry:hover .arrow {
+  transform: translate(1px, -1px);
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 640px) {
+  body {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+  
+  .page-container {
+    gap: 3.75rem;
+  }
+  
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  
+  .exp-line-top {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .stack-entry {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
